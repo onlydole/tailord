@@ -1,0 +1,26 @@
+extends: existence
+message: "Hype reinforcement detected ('%s'). These validation clauses add no substance — cut them."
+ignorecase: true
+level: warning
+tokens:
+  - and the numbers back that up
+  - and it shows
+  - which is no small feat
+  - and for good reason
+  - and it's paying off
+  - and it's not hard to see why
+  - and the results speak for themselves
+  - and the data backs this up
+  - the numbers don't lie
+  - the proof is in the pudding
+  - which speaks volumes
+  - and it's easy to see why
+  - and rightfully so
+  - which is saying something
+  - and they're not wrong
+  - and that's saying a lot
+  - and that's no accident
+  - and that's the real story
+  - and that's the key
+  - and that's what makes it work
+  - and that changes everything

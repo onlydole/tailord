@@ -1,0 +1,28 @@
+extends: existence
+message: "Quote framing ('%s'). Let quotes speak for themselves — delete the throat-clearing before them."
+ignorecase: true
+level: warning
+tokens:
+  - put it well
+  - put it best
+  - put it perfectly
+  - put it simply
+  - put it succinctly
+  - said it best
+  - said it well
+  - said it perfectly
+  - summed it up
+  - summed up the
+  - captured it perfectly
+  - captured it well
+  - nailed it when
+  - nailed it with
+  - as eloquently put
+  - eloquently put it
+  - a comment stopped me
+  - one response cut to the core
+  - one comment stood out
+  - one response stood out
+  - one reply stood out
+  - one post stood out
+  - one thread stood out

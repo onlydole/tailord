@@ -1,0 +1,21 @@
+extends: existence
+message: "'%s' assumes the reader finds this easy. If it were that simple, they wouldn't be reading."
+ignorecase: true
+level: suggestion
+tokens:
+  - simply
+  - just
+  - easily
+  - obviously
+  - of course
+  - everyone knows
+  - as you know
+  - as you can see
+  - needless to say
+  - straightforward
+  - trivial
+  - merely
+  - all you need to do
+  - it goes without saying
+  - basically
+  - clearly

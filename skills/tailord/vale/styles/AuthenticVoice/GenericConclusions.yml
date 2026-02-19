@@ -1,0 +1,44 @@
+extends: existence
+message: "Generic conclusion ('%s'). End with something specific — a fact, a plan, or a direct statement."
+ignorecase: true
+level: warning
+tokens:
+  - the future looks bright
+  - exciting times lie ahead
+  - exciting times ahead
+  - represents a major step
+  - only time will tell
+  - remains to be seen
+  - one thing is clear
+  - one thing is certain
+  - one thing is for sure
+  - what's clear is that
+  - what is clear is that
+  - looking ahead
+  - as we look ahead
+  - as we move forward
+  - moving forward
+  - going forward
+  - in the years to come
+  - in the months ahead
+  - poised for growth
+  - poised to
+  - well-positioned to
+  - continues to evolve
+  - will continue to shape
+  - will undoubtedly
+  - is set to transform
+  - promises to be
+  - despite its challenges
+  - despite these challenges
+  - future outlook
+  - future prospects
+  - continues to thrive
+  - potential developments
+  - positions them as
+  - represents a major step forward
+  - an exciting time
+  - exciting developments
+  - faces several challenges
+  - faces challenges typical of
+  - face significant challenges

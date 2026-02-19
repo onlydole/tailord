@@ -1,0 +1,23 @@
+extends: existence
+message: "'%s' may be a superficial analysis substitute. Replace with actual substance — what specifically is being done?"
+ignorecase: true
+level: suggestion
+tokens:
+  - highlighting the
+  - underscoring the
+  - emphasizing the
+  - ensuring that
+  - reflecting the
+  - symbolizing the
+  - contributing to the
+  - cultivating a
+  - fostering a
+  - encompassing a
+  - showcasing the
+  - demonstrating the
+  - illustrating the
+  - encapsulating the
+  - representing the
+  - signaling a
+  - heralding a
+  - spearheading the

@@ -1,0 +1,6 @@
+extends: occurrence
+message: "Em dash overuse. This voice style limits em dashes to 2 per piece — consider commas or periods instead."
+level: warning
+scope: text
+token: "—"
+max: 2

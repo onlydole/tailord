@@ -1,0 +1,46 @@
+extends: existence
+message: "Throat-clearing detected ('%s'). Start with the point instead."
+ignorecase: true
+level: warning
+tokens:
+  - in today's world
+  - in today's fast-paced
+  - in the rapidly evolving
+  - in an era of
+  - in an age of
+  - in a world where
+  - when it comes to
+  - it goes without saying
+  - it should come as no surprise
+  - needless to say
+  - as we all know
+  - as you may know
+  - as you probably know
+  - it bears mentioning
+  - it's no secret that
+  - it is no secret that
+  - the fact of the matter is
+  - at the end of the day
+  - when all is said and done
+  - the reality is that
+  - the truth is that
+  - there's no denying that
+  - there is no denying that
+  - let's face it
+  - make no mistake
+  - I keep coming back to
+  - I keep thinking about
+  - I keep returning to
+  - I find myself coming back to
+  - I find myself thinking about
+  - I find myself returning to
+  - I find myself wondering
+  - I don't see enough people asking
+  - I don't see enough people talking about
+  - not enough people are asking
+  - not enough people are talking about
+  - nobody is talking about
+  - nobody seems to be asking
+  - no one is talking about
+  - no one seems to be asking
+  - that I don't see enough people asking

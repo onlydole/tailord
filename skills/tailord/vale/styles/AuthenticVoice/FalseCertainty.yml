@@ -1,0 +1,24 @@
+extends: existence
+message: "False certainty ('%s'). If the evidence is strong, show it — don't just assert certainty."
+ignorecase: true
+level: warning
+tokens:
+  - it is clear that
+  - it's clear that
+  - it is evident that
+  - it's evident that
+  - there is no doubt that
+  - there's no doubt that
+  - there is no question that
+  - there's no question that
+  - without question
+  - the evidence clearly shows
+  - this clearly demonstrates
+  - this clearly shows
+  - this undeniably
+  - this unquestionably
+  - it cannot be overstated
+  - cannot be understated
+  - cannot be overstated
+  - it is undeniable that
+  - it's undeniable that

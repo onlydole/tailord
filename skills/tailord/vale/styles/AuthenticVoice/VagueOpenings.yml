@@ -1,0 +1,25 @@
+extends: existence
+message: "Vague opening ('%s'). Openings with vague plurality need a thesis — tell the reader what the piece is ABOUT."
+ignorecase: true
+level: warning
+tokens:
+  - Seven things changed
+  - Five things changed
+  - Three things changed
+  - Six things changed
+  - Four things changed
+  - Eight things changed
+  - Nine things changed
+  - Ten things changed
+  - Several things changed
+  - A lot changed
+  - Everything changed
+  - Seven patterns emerged
+  - Five patterns emerged
+  - Three patterns emerged
+  - Several patterns emerged
+  - A few things happened
+  - A bunch of things landed
+  - Multiple things shipped
+  - still sorting out which ones matter
+  - still figuring out which ones matter

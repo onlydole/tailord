@@ -1,0 +1,39 @@
+extends: existence
+message: "Adverb inflation ('%s'). This intensifier adds no concrete meaning — remove it or replace with a specific fact."
+ignorecase: true
+level: suggestion
+tokens:
+  - truly remarkable
+  - truly transformative
+  - truly unique
+  - truly innovative
+  - deeply insightful
+  - deeply rooted in
+  - deeply committed
+  - fundamentally changed
+  - fundamentally reshaping
+  - fundamentally different
+  - fundamentally flawed
+  - incredibly important
+  - incredibly powerful
+  - remarkably well
+  - remarkably similar
+  - undoubtedly important
+  - undoubtedly the
+  - undeniably important
+  - undeniably the
+  - exceptionally well
+  - extraordinarily important
+  - absolutely essential
+  - absolutely critical
+  - extremely helpful
+  - extremely important
+  - highly innovative
+  - highly effective
+  - highly recommended
+  - especially noteworthy
+  - particularly noteworthy
+  - particularly important
+  - quite simply
+  - very important
+  - very significant

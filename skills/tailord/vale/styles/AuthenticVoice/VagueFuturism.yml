@@ -1,0 +1,24 @@
+extends: existence
+message: "Vague futurism ('%s'). Name the specific thing you're proposing instead of gesturing at an abstract future."
+ignorecase: true
+level: warning
+tokens:
+  - a version of the future where
+  - there's a version of the future
+  - there is a version of the future
+  - imagine a world where
+  - imagine a future where
+  - imagine a scenario where
+  - picture a world where
+  - picture a future where
+  - envision a world where
+  - envision a future where
+  - in a future where
+  - there's a world where
+  - there is a world where
+  - in an ideal world
+  - in a perfect world
+  - the future I want to see
+  - the future we should build
+  - a better future where
+  - what if there were a world

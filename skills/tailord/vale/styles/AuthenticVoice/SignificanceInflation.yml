@@ -1,0 +1,37 @@
+extends: existence
+message: "Significance inflation ('%s'). Let the facts demonstrate importance — don't assert it."
+ignorecase: true
+level: warning
+tokens:
+  - stands as
+  - serves as a reminder
+  - is a testament to
+  - plays a vital role
+  - plays a crucial role
+  - plays a pivotal role
+  - plays a significant role
+  - plays an important role
+  - plays a key role
+  - underscores the importance
+  - highlights the importance
+  - underscores the need
+  - highlights the need
+  - broader trends
+  - symbolizing
+  - contributing to the
+  - setting the stage
+  - marking a new
+  - shaping the future
+  - shaping the
+  - deeply rooted
+  - at the forefront
+  - at the cutting edge
+  - a new era
+  - ushering in
+  - a defining moment
+  - a watershed moment
+  - a turning point
+  - signals a sea change
+  - heralds a new
+  - represents a paradigm shift
+  - serves as a testament

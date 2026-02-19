@@ -1,0 +1,30 @@
+extends: existence
+message: "Emotional positioning ('%s'). This narrates your internal state instead of presenting information. State the observation or question directly."
+ignorecase: true
+level: warning
+tokens:
+  - I'm sitting with
+  - I've been sitting with
+  - the tension I'm sitting with
+  - I've been wrestling with
+  - I'm wrestling with
+  - I've been grappling with
+  - I'm grappling with
+  - I've been mulling over
+  - I'm mulling over
+  - I've been noodling on
+  - I'm noodling on
+  - I've been chewing on
+  - I'm chewing on
+  - I can't stop thinking about
+  - I can't shake the feeling
+  - something feels off about
+  - something doesn't sit right
+  - what keeps nagging me
+  - what nags at me
+  - what gnaws at me
+  - it struck me that
+  - it hit me that
+  - it dawned on me that
+  - it occurred to me that
+  - a question that haunts me

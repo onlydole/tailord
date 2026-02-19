@@ -1,0 +1,1 @@
+AuthenticVoice is a custom Vale style for enforcing natural, human writing voice. It captures anti-AI-slop rules, vocabulary swaps, and structural pattern detection. Designed for use alongside the Google style package.

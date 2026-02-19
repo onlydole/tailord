@@ -1,0 +1,14 @@
+{
+  "name": "tailord",
+  "version": "1.0.0",
+  "description": "Tailor your drafts to your voice. A Claude Code skill with custom Vale linting rules and a multi-agent editorial team that strips AI writing patterns from prose.",
+  "author": {
+    "name": "Taylor Dolezal",
+    "url": "https://github.com/onlydole"
+  },
+  "homepage": "https://github.com/onlydole/tailord",
+  "repository": "https://github.com/onlydole/tailord",
+  "license": "Apache-2.0",
+  "keywords": ["writing", "voice", "editorial", "vale", "blog", "newsletter"],
+  "skills": "./skills/"
+}

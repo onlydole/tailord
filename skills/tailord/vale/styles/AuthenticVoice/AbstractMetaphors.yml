@@ -1,0 +1,35 @@
+extends: existence
+message: "Abstract metaphor trope ('%s'). This figurative cliché is an AI writing pattern — use concrete language instead."
+ignorecase: true
+level: warning
+tokens:
+  - a tapestry of
+  - a symphony of
+  - a mosaic of
+  - a constellation of
+  - a beacon of
+  - a treasure trove of
+  - a goldmine of
+  - a wealth of
+  - a sea of
+  - a flood of
+  - a wave of
+  - a web of
+  - a maze of
+  - a labyrinth of
+  - the tip of the iceberg
+  - a double-edged sword
+  - the elephant in the room
+  - a breath of fresh air
+  - a canvas of possibilities
+  - the fabric of
+  - the heart and soul of
+  - a pillar of
+  - the backbone of
+  - a window into
+  - a gateway to
+  - a bridge between
+  - blazing a trail
+  - pushing the boundaries
+  - a crucible of
+  - a prism of

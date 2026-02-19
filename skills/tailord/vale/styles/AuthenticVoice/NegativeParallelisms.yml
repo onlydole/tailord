@@ -1,0 +1,14 @@
+extends: existence
+message: "Negative parallelism detected ('%s'). These are a strong AI writing tell — rewrite as a direct statement."
+ignorecase: true
+level: error
+tokens:
+  - not only
+  - it's not just
+  - it is not just
+  - it isn't just
+  - not merely
+  - it goes beyond
+  - more than just
+  - it's not simply
+  - it is not simply

@@ -1,0 +1,35 @@
+extends: existence
+message: "Floater sentence ('%s'). This narrates your process without teaching the reader anything — tighten the narrative or cut it."
+ignorecase: true
+level: warning
+tokens:
+  - That shift changed
+  - That changed how I
+  - That changed which
+  - That changed the way
+  - I'm still figuring out
+  - I'm still working through
+  - I'm still making sense of
+  - I'm still processing
+  - I'm still sorting through
+  - That tradeoff matters
+  - And the name is precise
+  - And that matters
+  - And that's important
+  - That distinction matters
+  - That difference matters
+  - That matters more than
+  - Which is exactly the point
+  - And that's the whole point
+  - I'm still sorting out
+  - I'm still checking
+  - I don't have a tidy frame
+  - I don't have a clean frame
+  - I don't have a neat frame
+  - I'm still figuring this out
+  - and I'm still
+  - which cracks run deep
+  - a tidy frame for it
+  - a clean frame for this
+  - a neat frame for that
+  - still checking which

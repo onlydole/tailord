@@ -1,0 +1,20 @@
+extends: existence
+message: "Social proof padding ('%s'). Show what people learned or built, not that something was popular."
+ignorecase: true
+level: suggestion
+tokens:
+  - went viral
+  - goes viral
+  - gone viral
+  - going viral
+  - top of Hacker News
+  - front page of Hacker News
+  - trending on
+  - trended on
+  - with over a million
+  - million views
+  - billion market
+  - billion-dollar market
+  - million users
+  - thousand upvotes
+  - thousand stars on GitHub

@@ -1,0 +1,31 @@
+extends: existence
+message: "'%s' is promotional language. Use specific, concrete descriptions instead."
+ignorecase: true
+level: warning
+tokens:
+  - vibrant
+  - profound
+  - profoundly
+  - enhancing
+  - showcasing
+  - showcases
+  - exemplifies
+  - commitment to excellence
+  - natural beauty
+  - groundbreaking
+  - breathtaking
+  - awe-inspiring
+  - state-of-the-art
+  - world-class
+  - best-in-class
+  - industry-leading
+  - next-generation
+  - revolutionary
+  - transformative
+  - unprecedented
+  - unparalleled
+  - trailblazing
+  - visionary
+  - innovative
+  - cutting-edge
+  - disruptive

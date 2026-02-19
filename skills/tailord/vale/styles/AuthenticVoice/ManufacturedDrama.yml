@@ -1,0 +1,32 @@
+extends: existence
+message: "Manufactured drama ('%s'). This stages a cinematic moment that didn't happen. State what the person said without narrating how they said it."
+ignorecase: true
+level: warning
+tokens:
+  - his answer was direct
+  - her answer was direct
+  - their answer was direct
+  - his response was direct
+  - her response was direct
+  - their response was direct
+  - his answer was blunt
+  - her answer was blunt
+  - his answer was simple
+  - her answer was simple
+  - put it to me plainly
+  - put it to me directly
+  - put it to me bluntly
+  - put it plainly
+  - told me directly
+  - told me point-blank
+  - said it point-blank
+  - was blunt about it
+  - was candid about it
+  - was frank about it
+  - didn't mince words
+  - didn't sugarcoat it
+  - pulled no punches
+  - the answer was clear
+  - the answer was simple
+  - the answer surprised me
+  - their answer surprised me

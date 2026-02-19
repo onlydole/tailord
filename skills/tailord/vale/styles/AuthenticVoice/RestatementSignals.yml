@@ -1,0 +1,38 @@
+extends: existence
+message: "Restatement signal detected ('%s'). If this restates earlier information, delete and add a brief reference instead."
+ignorecase: true
+level: warning
+tokens:
+  - essentially, we're going to
+  - essentially, we are going to
+  - in other words,
+  - as mentioned earlier
+  - as mentioned above
+  - as we mentioned
+  - as noted earlier
+  - as noted above
+  - as we noted
+  - as discussed earlier
+  - as discussed above
+  - as we discussed
+  - to recap,
+  - to reiterate,
+  - to summarize,
+  - just to be clear,
+  - what this means is
+  - what that means is
+  - put another way,
+  - said another way,
+  - stated differently,
+  - in simpler terms,
+  - to put it simply,
+  - let me rephrase
+  - let me restate
+  - as I said,
+  - as I mentioned,
+  - as we saw,
+  - as we covered,
+  - like I said,
+  - like we said,
+  - again, this is
+  - once again,

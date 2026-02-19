@@ -1,0 +1,77 @@
+extends: existence
+message: "Unsubstantiated superlative ('%s'). Show the reader WHY — don't assert the verdict without evidence."
+ignorecase: true
+level: warning
+tokens:
+  - the steadiest thing I read
+  - the steadiest thing I saw
+  - the steadiest thing I heard
+  - the steadiest thing I found
+  - the steadiest thing I encountered
+  - the strongest thing I read
+  - the strongest thing I saw
+  - the strongest thing I heard
+  - the strongest thing I found
+  - the strongest thing I encountered
+  - the weakest thing I read
+  - the weakest thing I saw
+  - the weakest thing I heard
+  - the weakest thing I found
+  - the weakest thing I encountered
+  - the scariest thing I read
+  - the scariest thing I saw
+  - the scariest thing I heard
+  - the scariest thing I found
+  - the scariest thing I encountered
+  - the wildest thing I read
+  - the wildest thing I saw
+  - the wildest thing I heard
+  - the wildest thing I found
+  - the wildest thing I encountered
+  - the strangest thing I read
+  - the strangest thing I saw
+  - the strangest thing I heard
+  - the strangest thing I found
+  - the strangest thing I encountered
+  - the most important thing I read
+  - the most important thing I saw
+  - the most important thing I heard
+  - the most important thing I found
+  - the most important thing I encountered
+  - the most interesting thing I read
+  - the most interesting thing I saw
+  - the most interesting thing I heard
+  - the most interesting thing I found
+  - the most interesting thing I encountered
+  - the best thing I read
+  - the best thing I saw
+  - the best thing I heard
+  - the best thing I found
+  - the best thing I encountered
+  - the worst thing I read
+  - the worst thing I saw
+  - the worst thing I heard
+  - the worst thing I found
+  - the worst thing I encountered
+  - the most revealing thing I read
+  - the most revealing thing I saw
+  - the most revealing thing I heard
+  - the most revealing thing I found
+  - the most revealing thing I encountered
+  - the most surprising thing I read
+  - the most surprising thing I saw
+  - the most surprising thing I heard
+  - the most surprising thing I found
+  - the most surprising thing I encountered
+  - the most significant thing I read
+  - the most significant thing I saw
+  - the most significant thing I heard
+  - the most significant thing I found
+  - the most significant thing I encountered
+  - deserves more attention than it's getting
+  - deserves more attention than it gets
+  - more than any press release
+  - tells you more than
+  - stands out because
+  - did something that deserves
+  - did something worth

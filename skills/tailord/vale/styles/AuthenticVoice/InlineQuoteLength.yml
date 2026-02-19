@@ -1,0 +1,6 @@
+extends: existence
+message: "Inline quote too long ('%s'). Quotes over ~15 words should use > blockquotes for readability."
+ignorecase: false
+level: warning
+raw:
+  - '"[^"]{120,}"'

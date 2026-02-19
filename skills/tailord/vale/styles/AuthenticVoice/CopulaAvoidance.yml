@@ -1,0 +1,17 @@
+extends: substitution
+message: "Prefer simpler phrasing. Consider '%s' instead of '%s'."
+ignorecase: true
+level: suggestion
+swap:
+  serves as: "is"
+  stands as: "is"
+  represents: "is"
+  boasts: "has"
+  features: "has"
+  offers: "has"
+  constitutes: "is"
+  comprises: "is"
+  embodies: "is"
+  exemplifies: "shows"
+  epitomizes: "shows"
+  encapsulates: "captures"

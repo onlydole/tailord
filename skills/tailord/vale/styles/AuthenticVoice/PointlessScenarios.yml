@@ -1,0 +1,22 @@
+extends: existence
+message: "Pointless scenario ('%s'). This describes a scenario without analysis or actionable insight — tell the reader what to do with it."
+ignorecase: true
+level: warning
+tokens:
+  - Ask an LLM
+  - Ask a model
+  - Ask the model
+  - Ask ChatGPT
+  - Ask Claude
+  - Ask Copilot
+  - Ask an AI
+  - prompt an LLM
+  - prompt a model
+  - prompt the model
+  - type a prompt, wait
+  - get a confident answer, then
+  - watch it flip
+  - and watch what happens
+  - and see what happens
+  - try asking it
+  - try prompting it

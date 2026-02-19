@@ -1,0 +1,24 @@
+extends: existence
+message: "Fabricated experience ('%s'). This constructs a hypothetical encounter the AI hasn't had. Either ground it in a specific real event or cut it."
+ignorecase: true
+level: warning
+tokens:
+  - I keep bumping into
+  - I keep running into
+  - I keep noticing
+  - I keep seeing
+  - What I find genuinely interesting
+  - What I find genuinely compelling
+  - What I find most interesting
+  - What I find most compelling
+  - the thing that struck me watching
+  - the thing that struck me reading
+  - the thing that struck me about
+  - you'll start to feel
+  - you'll start to notice
+  - you'll start to see
+  - you open the tool and
+  - you sit down at your desk
+  - you sit down to
+  - Picture the workflow
+  - Picture this scenario

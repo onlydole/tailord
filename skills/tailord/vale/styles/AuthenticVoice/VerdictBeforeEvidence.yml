@@ -1,0 +1,28 @@
+extends: existence
+message: "Verdict before evidence ('%s'). Show the evidence first, then let the reader reach the conclusion."
+ignorecase: true
+level: suggestion
+tokens:
+  - "That's powerful"
+  - "That's remarkable"
+  - "That's significant"
+  - "That's impressive"
+  - "It can do all of that"
+  - "which might be the most valuable"
+  - "which is perhaps the most"
+  - "is worth trying"
+  - "is worth exploring"
+  - "is worth paying attention to"
+  - "the upgrade is significant"
+  - "the improvement is significant"
+  - "the results are impressive"
+  - "the difference is striking"
+  - "the implications are enormous"
+  - "the implications are significant"
+  - "deserves more attention"
+  - "deserves a closer look"
+  - "the steadiest thing"
+  - "the most grounding thing"
+  - "nobody has solved this"
+  - "makes you wonder why nobody"
+  - "makes you wonder why no one"

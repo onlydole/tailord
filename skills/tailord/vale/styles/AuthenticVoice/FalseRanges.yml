@@ -1,0 +1,15 @@
+extends: existence
+message: "Possible false range ('%s'). Ensure X and Y are on a meaningful scale — otherwise pick one and be specific."
+ignorecase: true
+level: suggestion
+tokens:
+  - from beginners to experts
+  - from novice to expert
+  - from simple to complex
+  - from small to large
+  - from startups to enterprises
+  - from students to professionals
+  - from hobbyists to professionals
+  - from basic to advanced
+  - from individuals to organizations
+  - from young to old

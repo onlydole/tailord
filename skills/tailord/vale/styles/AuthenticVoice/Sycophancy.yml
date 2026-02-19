@@ -1,0 +1,25 @@
+extends: existence
+message: "Sycophantic tone ('%s'). This sounds like a chatbot — remove it."
+ignorecase: true
+level: error
+tokens:
+  - great question
+  - excellent question
+  - that's a great point
+  - that's an excellent point
+  - you raise a good point
+  - you raise an excellent point
+  - absolutely right
+  - you're absolutely right
+  - couldn't agree more
+  - I couldn't agree more
+  - spot on
+  - well said
+  - perfectly stated
+  - brilliantly put
+  - what a wonderful
+  - how exciting
+  - how fascinating
+  - I'm glad you asked
+  - thanks for sharing
+  - thank you for sharing

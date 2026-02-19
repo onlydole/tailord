@@ -1,0 +1,29 @@
+extends: existence
+message: "Excessive hedging ('%s'). Commit to the statement or cut it."
+ignorecase: true
+level: suggestion
+tokens:
+  - could potentially
+  - might possibly
+  - may potentially
+  - could possibly
+  - it could be argued
+  - it might be argued
+  - it could be said
+  - it might be said
+  - one could argue
+  - one might argue
+  - to some extent
+  - to a certain degree
+  - to a certain extent
+  - in some ways
+  - in many ways
+  - it seems like
+  - it would seem
+  - it appears that
+  - it would appear
+  - arguably
+  - perhaps somewhat
+  - somewhat arguably
+  - it is possible that
+  - there is a possibility

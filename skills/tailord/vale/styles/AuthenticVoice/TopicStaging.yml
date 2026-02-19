@@ -1,0 +1,39 @@
+extends: existence
+message: "Topic-staging filler ('%s'). Connect ideas naturally or start a new paragraph."
+ignorecase: true
+level: suggestion
+tokens:
+  - with that being said
+  - with that said
+  - that being said
+  - having said that
+  - with that in mind
+  - with all of this in mind
+  - bearing this in mind
+  - taking this into account
+  - all things considered
+  - as we've seen
+  - as we can see
+  - as you can see
+  - to put it simply
+  - to put it another way
+  - said another way
+  - put differently
+  - viewed another way
+  - in simpler terms
+  - to frame it differently
+  - from a broader perspective
+  - generally speaking
+  - broadly speaking
+  - what interests me more is
+  - what interests me most is
+  - what excites me more is
+  - what excites me most is
+  - what concerns me more is
+  - what concerns me most is
+  - what fascinates me more is
+  - what fascinates me most is
+  - what strikes me more is
+  - what strikes me most is
+  - what I find more interesting is
+  - what I find most interesting is

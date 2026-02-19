@@ -1,0 +1,21 @@
+extends: existence
+message: "Unsubstantiated emotional claim ('%s'). If you assert an emotional reaction, the next sentence must explain WHY with specific evidence. Otherwise cut the claim."
+ignorecase: true
+level: warning
+tokens:
+  - shook me
+  - shook us
+  - hit me hard
+  - hit me differently
+  - stopped me cold
+  - stopped me in my tracks
+  - blew my mind
+  - blew me away
+  - I wasn't expecting
+  - I wasn't prepared for
+  - caught me off guard
+  - gave me chills
+  - gave me pause
+  - took my breath away
+  - left me speechless
+  - made me rethink

@@ -1,0 +1,47 @@
+extends: existence
+message: "'%s' is a common AI writing tell. Find a more specific, plain-English alternative."
+ignorecase: true
+level: error
+tokens:
+  - moreover
+  - furthermore
+  - indeed
+  - in conclusion
+  - overall
+  - crucial
+  - vital
+  - nestled
+  - in the heart of
+  - breathtaking
+  - must-visit
+  - stunning
+  - renowned
+  - indelible mark
+  - indelible
+  - focal point
+  - key turning point
+  - evolving landscape
+  - in today's fast-paced
+  - fast-paced digital world
+  - plays a significant role
+  - stands as a testament
+  - unlock the secrets
+  - it is important to note
+  - it's important to note
+  - it is worth noting
+  - it's worth noting
+  - additionally
+  - enduring
+  - rich tapestry
+  - diverse tapestry
+  - in summary
+  - a curated compilation
+  - cacophony
+  - linchpin
+  - milestone achievement
+  - in today's digital age
+  - in today's digital era
+  - in this day and age
+  - disruptive technology
+  - digital transformation
+  - future-proof

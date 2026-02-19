@@ -1,0 +1,19 @@
+extends: existence
+message: "Overused conjunctive transition ('%s'). These formal connectors signal AI writing in blog prose — use a simpler transition or restructure."
+ignorecase: true
+level: suggestion
+tokens:
+  - "In addition,"
+  - "Consequently,"
+  - "Nevertheless,"
+  - "Nonetheless,"
+  - "Importantly,"
+  - "Subsequently,"
+  - "Conversely,"
+  - "Hence,"
+  - "Henceforth,"
+  - "Thereby,"
+  - "Therein,"
+  - "Herein,"
+  - "Notwithstanding,"
+  - "Correspondingly,"

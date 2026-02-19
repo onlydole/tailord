@@ -1,0 +1,21 @@
+extends: substitution
+message: "Use the contraction '%s' instead of '%s' — prose should sound like speech."
+ignorecase: true
+level: suggestion
+swap:
+  do not: "don't"
+  does not: "doesn't"
+  did not: "didn't"
+  will not: "won't"
+  would not: "wouldn't"
+  could not: "couldn't"
+  should not: "shouldn't"
+  cannot: "can't"
+  can not: "can't"
+  is not: "isn't"
+  are not: "aren't"
+  was not: "wasn't"
+  were not: "weren't"
+  has not: "hasn't"
+  have not: "haven't"
+  had not: "hadn't"

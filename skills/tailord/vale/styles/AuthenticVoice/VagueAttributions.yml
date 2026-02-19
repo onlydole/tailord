@@ -1,0 +1,54 @@
+extends: existence
+message: "Vague attribution ('%s'). Name the specific source, study, or person."
+ignorecase: true
+level: warning
+tokens:
+  - industry reports
+  - industry experts
+  - observers have cited
+  - observers note
+  - experts argue
+  - experts say
+  - experts suggest
+  - experts believe
+  - some critics
+  - many believe
+  - many argue
+  - several sources
+  - according to reports
+  - according to experts
+  - according to sources
+  - studies show
+  - studies suggest
+  - research shows
+  - research suggests
+  - research indicates
+  - it has been noted
+  - it has been argued
+  - it has been suggested
+  - commentators have noted
+  - analysts say
+  - analysts suggest
+  - analysts believe
+  - thought leaders
+  - has been described as
+  - described in scholarship
+  - featured in
+  - cited in
+  - profiled in
+  - documented in
+  - independent coverage
+  - media outlets
+  - prominent media outlets
+  - active social media presence
+  - strong digital presence
+  - written by a leading expert
+  - one developer described
+  - one commenter noted
+  - one commenter wrote
+  - a user in the thread
+  - someone in the discussion
+  - one engineer mentioned
+  - one engineer noted
+  - one reader pointed out
+  - one user mentioned

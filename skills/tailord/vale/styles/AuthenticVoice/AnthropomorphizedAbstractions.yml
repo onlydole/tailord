@@ -1,0 +1,26 @@
+extends: existence
+message: "Anthropomorphized abstraction ('%s'). Data and research don't 'speak' or 'reveal' — attribute findings to specific people or studies."
+ignorecase: true
+level: suggestion
+tokens:
+  - the data suggests
+  - the data reveals
+  - the data tells us
+  - the data paints a picture
+  - the evidence suggests
+  - the evidence points to
+  - the numbers tell a story
+  - the numbers speak for themselves
+  - the findings reveal
+  - the findings suggest
+  - the results speak
+  - the research reveals
+  - the research suggests
+  - this approach offers
+  - this framework provides
+  - the industry has seen
+  - the market has witnessed
+  - the field has evolved
+  - the landscape has shifted
+  - history tells us
+  - the statistics paint

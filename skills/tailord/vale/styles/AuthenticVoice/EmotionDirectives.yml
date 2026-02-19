@@ -1,0 +1,35 @@
+extends: existence
+message: "Emotion directive ('%s'). Don't tell readers how to feel — describe the situation vividly enough that they reach the emotion themselves."
+ignorecase: true
+level: warning
+tokens:
+  - the frustrating part is
+  - the frustrating thing is
+  - the exciting part is
+  - the exciting thing is
+  - the interesting part is
+  - the interesting thing is
+  - the scary part is
+  - the scary thing is
+  - the annoying part is
+  - the annoying thing is
+  - the surprising part is
+  - the surprising thing is
+  - the disappointing part is
+  - the disappointing thing is
+  - the sad part is
+  - the sad thing is
+  - what's fascinating is
+  - what's exciting is
+  - what's interesting is
+  - what's remarkable is
+  - what's surprising is
+  - what's frustrating is
+  - what's scary is
+  - what's disappointing is
+  - the cool part is
+  - the cool thing is
+  - the best part is
+  - the worst part is
+  - the wild part is
+  - the wild thing is

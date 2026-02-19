@@ -1,0 +1,38 @@
+extends: existence
+message: "Communication artifact ('%s'). This reads like chatbot output, not written prose."
+ignorecase: true
+level: error
+tokens:
+  - I hope this helps
+  - hope this helps
+  - of course!
+  - of course,
+  - certainly!
+  - certainly,
+  - absolutely!
+  - you're absolutely right
+  - would you like me to
+  - let me know if
+  - feel free to
+  - don't hesitate to
+  - happy to help
+  - glad to help
+  - here is a
+  - here are some
+  - here's a quick
+  - here's a brief
+  - let's dive in
+  - let's get started
+  - without further ado
+  - shall we begin
+  - ready to explore
+  - is there anything else
+  - more detailed breakdown
+  - here's a template for
+  - for more information
+  - this message finds you well
+  - I can help you draft
+  - I'd be happy to
+  - if you'd like me to
+  - no fluff
+  - no BS

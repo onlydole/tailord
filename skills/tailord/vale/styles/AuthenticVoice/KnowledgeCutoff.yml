@@ -1,0 +1,17 @@
+extends: existence
+message: "Knowledge-cutoff artifact ('%s'). Remove this — it's an AI training artifact."
+ignorecase: true
+level: error
+tokens:
+  - as of my last
+  - as of my knowledge
+  - up to my last training
+  - based on available information
+  - while specific details are limited
+  - I don't have access to real-time
+  - I cannot browse the internet
+  - my training data
+  - my knowledge cutoff
+  - as of my last update
+  - I was trained on
+  - based on my training

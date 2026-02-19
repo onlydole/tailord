@@ -1,0 +1,21 @@
+extends: existence
+message: "Colon-list elision ('%s'). Develop ideas in prose instead of delegating to bullet lists."
+ignorecase: true
+level: suggestion
+tokens:
+  - "Here's why:"
+  - "Here's how:"
+  - "Here is why:"
+  - "Here is how:"
+  - "Consider the following:"
+  - "Key benefits include:"
+  - "Key advantages include:"
+  - "Key features include:"
+  - "Some examples include:"
+  - "There are several reasons:"
+  - "There are a few things to consider:"
+  - "The main benefits are:"
+  - "Important factors include:"
+  - "The key points are:"
+  - "Notable examples include:"
+  - "Primary benefits include:"

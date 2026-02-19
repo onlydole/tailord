@@ -1,0 +1,70 @@
+extends: existence
+message: "'%s' is redundant. Drop the unnecessary modifier."
+ignorecase: true
+level: warning
+tokens:
+  - absolutely essential
+  - absolutely necessary
+  - actual fact
+  - actual experience
+  - added bonus
+  - advance planning
+  - advance warning
+  - advance notice
+  - basic fundamentals
+  - basic essentials
+  - basic necessity
+  - brief summary
+  - brief moment
+  - close proximity
+  - close scrutiny
+  - collaborate together
+  - completely destroyed
+  - completely eliminate
+  - completely finished
+  - completely surrounded
+  - completely unanimous
+  - consensus of opinion
+  - general consensus
+  - continue on
+  - each and every
+  - empty space
+  - end result
+  - exact same
+  - final outcome
+  - first and foremost
+  - free gift
+  - full and complete
+  - future plans
+  - gather together
+  - join together
+  - merge together
+  - mutual agreement
+  - mutual cooperation
+  - new innovation
+  - overexaggerate
+  - past experience
+  - past history
+  - past memories
+  - plan ahead
+  - repeat again
+  - return back
+  - revert back
+  - rise up
+  - still persists
+  - still remains
+  - sum total
+  - unexpected surprise
+  - very first
+  - very unique
+  - totally unique
+  - most unique
+  - ATM machine
+  - PIN number
+  - HIV virus
+  - LCD display
+  - GPS system
+  - RAM memory
+  - API interface
+  - GUI interface
+  - CLI interface

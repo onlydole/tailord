@@ -1,0 +1,23 @@
+extends: existence
+message: "Formulaic heading ('%s'). Use a more specific, descriptive heading."
+ignorecase: true
+level: suggestion
+scope: heading
+tokens:
+  - "Key Takeaways"
+  - "Key Takeaway"
+  - "Final Thoughts"
+  - "Wrapping Up"
+  - "The Bottom Line"
+  - "Putting It All Together"
+  - "Conclusion"
+  - "In Conclusion"
+  - "Summary"
+  - "In Summary"
+  - "TL;DR"
+  - "TLDR"
+  - "Future Outlook"
+  - "Challenges and Legacy"
+  - "Challenges and Opportunities"
+  - "Looking Forward"
+  - "What's Next"

@@ -1,0 +1,27 @@
+extends: existence
+message: "Experiential padding ('%s'). Asserting you've personally witnessed something doesn't teach the reader anything. Show the evidence or cut the claim."
+ignorecase: true
+level: warning
+tokens:
+  - I've watched this
+  - I've seen this play out
+  - I've seen this happen
+  - I've seen this work
+  - I've seen this firsthand
+  - I can confirm
+  - I can attest
+  - I can vouch for
+  - this tracks with what I've seen
+  - in my experience, this
+  - from what I've seen
+  - from what I've observed
+  - having experienced this firsthand
+  - I know this firsthand
+  - I've experienced this
+  - I've witnessed this
+  - take it from me
+  - trust me on this
+  - believe me when I say
+  - I've been there
+  - I've done this myself
+  - I can tell you from experience

@@ -1,0 +1,6 @@
+extends: existence
+message: "Colon splice ('%s'). Use a period and start a new sentence instead of connecting clauses with a colon."
+ignorecase: false
+level: error
+raw:
+  - ': [a-z]'

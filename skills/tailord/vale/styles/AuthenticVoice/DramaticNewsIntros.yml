@@ -1,0 +1,23 @@
+extends: existence
+message: "Dramatic news intro ('%s'). Cut the drama and state what happened."
+ignorecase: true
+level: warning
+tokens:
+  - changed the tempo
+  - changed the game
+  - changed the equation
+  - shifted the landscape
+  - rewrote the rules
+  - rewrote the playbook
+  - flipped the script
+  - raised the bar
+  - moved the needle
+  - set a new standard
+  - turned heads
+  - made waves
+  - broke new ground
+  - shook up the
+  - sent shockwaves
+  - took the world by storm
+  - dropped a bombshell
+  - entered the chat

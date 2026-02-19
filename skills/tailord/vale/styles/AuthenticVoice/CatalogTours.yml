@@ -1,0 +1,10 @@
+extends: existence
+message: "Possible catalog tour opener ('%s'). Avoid touring through comma-separated feature lists — pick the most important and develop it."
+ignorecase: true
+level: suggestion
+tokens:
+  - everything from
+  - and beyond
+  - whether it's
+  - whether it is
+  - spans everything

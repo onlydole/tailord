@@ -1,0 +1,230 @@
+# Editorial Workflow
+When the author asks you to write or review a substantial piece (anything longer
+than a few paragraphs), spin up a multi-agent editorial team after producing
+the initial draft. Use Claude Code's Task tool with subagent_type "general-purpose"
+for each agent. Launch all eleven agents in parallel in a single message with
+eleven Task tool calls.
+
+Pass the full draft text to each agent in its prompt. Also pass the complete
+Writing Voice instructions from voice.md so each agent can evaluate against
+the actual rules.
+
+AGENT 1 - Voice Auditor.
+Prompt the agent with the draft and the Writing Voice instructions from voice.md. Ask it to read
+every sentence and flag any that sound like AI rather than the author. It should
+check for: reader solidarity in the opening, curiosity framing, flowing
+sentences, emotional range, specificity, and contractions. It should score
+each section 1-5 for voice authenticity and return a list of flagged sentences
+with suggested rewrites.
+
+AGENT 2 - Fact Checker.
+Prompt the agent with the draft. Ask it to verify every factual claim. Flag
+any detail that could be fabricated, including atmospheric details (times,
+weather, settings), credentials (who created what), specific numbers, and
+technical specifications. For each flagged claim, it should note whether the
+claim is verified, unverified, or fabricated, with a brief explanation.
+
+AGENT 3 - Anti-Slop Auditor.
+Prompt the agent with the draft and this checklist. Ask it to evaluate the
+draft against every item and report pass/fail with specific examples.
+
+NOTE: The draft has already been run through vale with custom AuthenticVoice rules
+that catch banned vocabulary, filler phrases, throat-clearing openers,
+negative parallelisms, hype reinforcement, generic conclusions, promotional
+language, em dash overuse, and other mechanical patterns. The Anti-Slop
+Auditor should focus on the contextual and subjective checklist items below
+that pattern matching cannot catch. If the auditor spots a mechanical
+violation that vale should have caught, flag it as a possible vale gap.
+
+Checklist.
+- First sentence states a point (no throat-clearing)
+- No "It's not just X, it's Y" structures
+- At least one sentence of four words or fewer per section
+- Sounds like speech when read aloud (uses contractions throughout)
+- Two or fewer em dashes in the whole piece
+- No summary conclusion (no "In conclusion," "In summary," "Overall")
+- Every claim has a real name, number, or example attached
+- Time grounding where relevant (dates, durations, "this week")
+- Named patterns where possible ("the scattered leader" not "doing too much")
+- Sense-making orientation, not tutorial (helping readers understand, not
+  giving them steps to follow)
+- Emotional range (not stuck in one analytical or one enthusiastic register)
+- Platform-appropriate tone (Substack: intimate letter to someone who chose
+  to subscribe, not a broadcast)
+
+AGENT 4 - Structural Editor.
+Prompt the agent with the draft. Ask it to evaluate the arc of the piece.
+Where does attention drop? Are there callbacks to earlier concepts? Are
+sections balanced in length? Does the ending land without summarizing? Does
+the opening earn the reader's first three paragraphs? It must perform these
+three explicit checks:
+(1) Verify the opening states or strongly implies a thesis — not just an
+attention-getter. After reading the opening, a reader must be able to answer
+"What is this piece about and what will I gain from reading it?"
+(2) Flag ALL vague pronouns (it, that, this, these) at section boundaries
+(first and last sentences of every section) and in the closing paragraph.
+Every pronoun at these positions must have an unambiguous referent within
+the same sentence or the immediately preceding sentence.
+(3) Check that the closing paragraph refers to specific things discussed in
+the piece by name, not vague references like "all of it," "what's coming,"
+or "this moment."
+(4) Section-boundary advancement test. Read the last two sentences of every
+section and the first two of the next. Flag any boundary where the new section
+resets to the same altitude or topic instead of advancing past where the
+previous section ended.
+It should return a section-by-section assessment with specific suggestions.
+
+AGENT 5 - Reader Proxy (Developer).
+Prompt the agent with the draft. Ask it to read as a working developer or
+engineering leader. What hooks them? What would they skip? What would they
+share with a colleague? What feels like it was written for them vs. at them?
+It must perform these three explicit checks:
+(1) For every named person, study, project, or tool, verify there is a
+markdown link on first mention. Flag every missing citation with the name
+and approximate location.
+(2) For every quote longer than one sentence, verify it uses a > blockquote,
+not inline double quotes. Flag any substantial quotes that are inline.
+(3) For every emotional claim or superlative ("shook me," "steadiest thing,"
+"stands out"), check whether the text answers WHY, not just WHAT happened.
+The explanation must provide specific evidence, not restate the claim in
+different words.
+It should return honest reactions paragraph by paragraph.
+
+AGENT 6 - Manufactured Relatability Detector.
+Prompt the agent with the draft. Its only job is to find sentences where
+the AI invented a personal anecdote or scene to sound relatable. The test
+for every first-person claim: "Did the author provide this specific experience,
+or did the AI fabricate it?" Flag sentences like "I opened the dashboard on
+Monday and the model I'd been using all week was already the old one" where
+the detail (Monday, "all week," the surprise) was not provided by the author
+but invented to manufacture a sense of being-there. For each flagged sentence,
+suggest a replacement that conveys the same information without fabricating
+an experience. Replacements should use verifiable observations ("The team
+shipped three updates in two weeks") or direct reader address ("If you
+logged in this week, the default model changed") instead.
+
+AGENT 7 - Filler and Hype Stripper.
+Prompt the agent with the draft. It should find and flag three specific
+patterns.
+Pattern 1: Hype reinforcement. Clauses that exist only to validate what
+was just stated. "And the numbers back that up." "And it shows." "And for
+good reason." "Which is no small feat." "Making it a compelling option."
+These add no information. For each one, suggest deleting the clause entirely
+or ending the sentence before it.
+Pattern 2: Catalog tours. Sentences that walk through a comma-separated
+list of items as if giving a guided tour of a press release. "A Mac app,
+a beefier model, and now something I didn't expect: a brand-new runtime." For each one,
+suggest leading with the single most important item and giving others their
+own sentences or cutting them.
+Pattern 3: Atmospheric padding. Sentences that narrate the experience of
+encountering information rather than presenting the information. "Here's a
+pattern I keep running into across almost every agentic coding tool I use.
+You type a prompt, wait while the agent thinks..." For each one, suggest
+starting with the concrete observation or example instead.
+Pattern 4: Unsubstantiated assertions. Sentences that claim something is
+important, surprising, or shaking without providing evidence for the claim.
+"Wrote something that shook me" followed by a description of what he did
+(not why it was shaking). "The steadiest thing I read this week" without
+saying WHY. For each one, flag the assertion and ask: "Where's the WHY?"
+
+AGENT 8 - Section Value Auditor.
+Prompt the agent with the draft. Its job is to review each section atomically.
+For every section, ask: "What specific new information does the reader gain
+here?" It must perform these additional checks:
+(1) Review the opening sentence of each section in isolation. Does it state
+a verifiable fact, or does it assert importance without evidence? Flag any
+opening sentence that is a verdict ("This deserves attention") rather than
+a fact ("Anthropic released X on Tuesday").
+(2) Apply the deletion test to every section: "If I removed this section
+entirely, would the reader lose any concrete information they can't get
+from the remaining sections?" If not, the section needs substance or should
+be merged.
+Flag any section where the answer is vague or amounts to "a summary
+of what someone said/did." Flag sentences that assert importance without
+demonstrating it ("deserves more attention," "the steadiest thing I read").
+Flag scenarios presented without a takeaway ("ask X, get Y, watch Z" — so
+what?). For each flagged section, state what's missing and suggest what
+concrete information would make it earn its space.
+(4) Cross-section duplication scan. For every key claim in each section,
+search all other sections for the same information expressed in different
+words. Flag duplicates and recommend which single section should own each
+piece of information.
+
+AGENT 9 - Cynical Reader.
+Prompt the agent with the draft. This agent assumes every sentence was
+written by AI until it proves otherwise. It reads with maximum suspicion and
+asks of each paragraph: "Would a real person actually write this, or does it
+feel assembled from training data?" It should return the five weakest
+sentences in the entire draft, ranked from worst to least bad, with a one-
+sentence explanation for why each one fails. It should also identify the
+three strongest sentences and explain what makes them work, so the revision
+can lean into what is already good.
+
+AGENT 10 - Copy Editor (Mechanical Compliance).
+Prompt the agent with the draft and the Writing Mechanics section from
+mechanics.md. This is the final-pass "did we actually follow the rules"
+check that catches anything vale and the other nine agents missed. It must
+check every one of these items and report pass/fail for each:
+(1) Every quote longer than one sentence uses > blockquote format, not
+inline double quotes.
+(2) Every named person, study, project, or tool has a markdown link on
+first mention.
+(3) No colon splices — no colons connecting independent clauses in prose.
+(4) The opening states or strongly implies a thesis, not just an attention-
+getter.
+(5) No ambiguous pronoun references (it, this, that, these) in the closing
+paragraph — every pronoun must have a clear, named referent.
+(6) Em dash count is two or fewer for the entire piece.
+(7) Contractions are used throughout (no uncontracted negatives unless in
+direct quotations).
+For each failure, cite the specific sentence and suggest a fix.
+
+AGENT 11 - Narrative Arc Auditor.
+Prompt the agent with the draft. Its sole job is cross-sectional coherence.
+It performs three checks:
+(a) Information duplication map. For every key fact, claim, or description,
+identify which section owns it. Flag any fact that appears in substantially
+similar form in more than one section. For each duplicate, recommend which
+section should own it and suggest a one-sentence reference for the other.
+(b) Section-to-section advancement. Read the last paragraph of each section
+and the first paragraph of the next. Does the second section start at a more
+advanced position than where the first ended? Flag any transition where the
+reader could swap the two paragraphs without noticing.
+(c) Tonal continuity at section boundaries. Check whether the tone shifts
+abruptly at section boundaries (e.g., tactical step-by-step into abstract
+strategic musing, or vice versa, without a bridge). Flag jarring tonal jumps
+and suggest a bridging sentence.
+
+AFTER ALL AGENTS REPORT.
+Synthesize findings by category with counts. Before applying fixes, present
+an editorial triage to the author using AskUserQuestion with two questions:
+
+1. "Which area matters most to you?" (single-select, options dynamically
+   built from categories that have findings — e.g., "Fabricated content (3)",
+   "Voice violations (7)", "Filler and hype (5)")
+
+2. "Any findings to dismiss?" (multi-select, list the top 3 most likely
+   false positives with brief one-line descriptions)
+
+The author's priority selection overrides the default fix ordering below.
+Dismissed findings are skipped during revision.
+
+Apply fixes in this priority order (adjusted by triage):
+1. Fabricated content (remove any anecdotes the Manufactured Relatability
+   Detector flagged, remove any claims the Fact Checker marked fabricated)
+2. Filler and hype (delete every hype reinforcement clause, break up every
+   catalog tour, cut atmospheric padding identified by Agent 7)
+3. Voice violations (rewrite sentences the Voice Auditor flagged as AI)
+4. Anti-slop failures (fix each failed checklist item from Agent 3)
+5. Structural issues (reorder, cut, or expand based on Structural Editor)
+6. Weakest sentences (address the Cynical Reader's bottom five, lean into
+   the top three)
+7. Reader engagement (incorporate Reader Proxy feedback on skippability)
+
+Present the revised draft to the author with a brief note listing what the
+editorial team found and what changed.
+
+FOR SHORTER PIECES.
+If the piece is only a few paragraphs (a quick post, a short email, a social
+media thread), skip the full five-agent team. Instead, do a single self-review
+pass against the anti-slop checklist above before delivering the draft.

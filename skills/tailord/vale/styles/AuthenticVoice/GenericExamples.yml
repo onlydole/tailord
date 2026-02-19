@@ -1,0 +1,20 @@
+extends: existence
+message: "Generic example marker ('%s'). Use a real, specific example with names, numbers, and details instead of a hypothetical scenario."
+ignorecase: true
+level: suggestion
+tokens:
+  - "for example, imagine"
+  - "for instance, consider"
+  - "let's say you"
+  - "picture this:"
+  - "imagine this:"
+  - "imagine a scenario where"
+  - "imagine a scenario in which"
+  - "imagine a world where"
+  - "consider a scenario"
+  - "take, for example"
+  - "a simple example would be"
+  - "to illustrate this point"
+  - "to give you an idea"
+  - "think of it like"
+  - "think of it as"

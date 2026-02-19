@@ -1,0 +1,28 @@
+extends: existence
+message: "Limitations preamble ('%s'). Lead with the specific limitation instead of this generic setup."
+ignorecase: true
+level: warning
+tokens:
+  - isn't without its limitations
+  - is not without its limitations
+  - not without its drawbacks
+  - not without its challenges
+  - not without its shortcomings
+  - has some notable limitations
+  - has some limitations
+  - has its share of limitations
+  - has its share of challenges
+  - has its limitations
+  - there are some caveats
+  - there are a few caveats
+  - with visible rough edges
+  - with some rough edges
+  - with a few rough edges
+  - comes with caveats
+  - comes with some caveats
+  - faces several challenges
+  - faces some challenges
+  - faces challenges typical of
+  - it has room for improvement
+  - there is room for improvement
+  - there's room for improvement

@@ -1,0 +1,6 @@
+extends: existence
+message: "Long inline quote ('%s'). Multi-sentence quotes should use > blockquotes, not inline double quotes."
+ignorecase: false
+level: warning
+raw:
+  - '"[^"]*\.\s+[A-Z][^"]*"'

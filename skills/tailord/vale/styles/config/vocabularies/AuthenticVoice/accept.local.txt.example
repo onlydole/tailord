@@ -1,0 +1,19 @@
+# Personal vocabulary — names and terms specific to your writing.
+# Copy this file to accept.local.txt and add your own entries.
+# One term per line, alphabetically sorted. Case-sensitive.
+#
+# The lint script merges accept.txt + accept.local.txt before running vale,
+# so terms here suppress spelling errors just like accept.txt entries.
+#
+# Examples of what goes here:
+# - People:        Karpathy, Karpathy's, Hashimoto
+# - Companies:     Anthropic's, Vercel, Pulumi
+# - Niche tech:    rqlite, pgvector, smolagents, torchao
+# - Product names: Bazzite, Bluefin, Jellyfin, SwiftUI
+
+# Uncomment and replace with your own terms:
+# Firstname
+# Lastname
+# Lastname's
+# CompanyName
+# NicheTool

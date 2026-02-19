@@ -1,0 +1,38 @@
+extends: existence
+message: "Section reset opener detected ('%s'). Open with the new section's point, not a recap of the previous one."
+ignorecase: true
+level: warning
+tokens:
+  - hopefully you found this
+  - hopefully that was helpful
+  - hopefully this was helpful
+  - now that we've covered
+  - now that we've built
+  - now that we've seen
+  - now that we've set up
+  - now that we've established
+  - now that we've configured
+  - now that we've created
+  - now that we have
+  - now that you've seen
+  - now that you've built
+  - now that you have
+  - with that in place,
+  - with all that in place,
+  - with that set up,
+  - with that done,
+  - with that out of the way,
+  - we've now built
+  - we've now covered
+  - we've now seen
+  - we've now set up
+  - we've now established
+  - so far we've
+  - so far, we've
+  - up to this point,
+  - at this point, we've
+  - at this point, you've
+  - looking back at what we've
+  - to review what we've
+  - before we move on,
+  - before moving on,

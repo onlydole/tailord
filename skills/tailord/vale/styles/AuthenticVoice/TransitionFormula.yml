@@ -1,0 +1,21 @@
+extends: existence
+message: "AI transition formula ('%s'). This 'stops being X, starts being Y' construction is a strong LLM tell — rewrite the contrast directly."
+ignorecase: true
+level: warning
+tokens:
+  - stops being
+  - stopped being
+  - stop being
+  - goes from being
+  - went from being
+  - go from being
+  - shifts from being
+  - shifted from being
+  - is no longer just
+  - are no longer just
+  - was no longer just
+  - were no longer just
+  - transforms from
+  - transformed from
+  - evolves from
+  - evolved from

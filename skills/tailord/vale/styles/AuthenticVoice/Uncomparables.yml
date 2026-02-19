@@ -1,0 +1,40 @@
+extends: existence
+message: "'%s' modifies an absolute term. Something is either unique or it isn't."
+ignorecase: true
+level: warning
+tokens:
+  - very unique
+  - more unique
+  - most unique
+  - somewhat unique
+  - fairly unique
+  - very perfect
+  - more perfect
+  - most perfect
+  - very complete
+  - more complete
+  - very dead
+  - very infinite
+  - more infinite
+  - very impossible
+  - more impossible
+  - very essential
+  - more essential
+  - very absolute
+  - more absolute
+  - very fatal
+  - more fatal
+  - very final
+  - more final
+  - very universal
+  - more universal
+  - very equal
+  - more equal
+  - very eternal
+  - more eternal
+  - very supreme
+  - more supreme
+  - very unanimous
+  - more unanimous
+  - very optimal
+  - more optimal
