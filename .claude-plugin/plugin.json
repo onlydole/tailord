@@ -1,6 +1,6 @@
 {
   "name": "tailord",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tailor your drafts to your voice. A Claude Code skill with custom Vale linting rules and a multi-agent editorial team that strips AI writing patterns from prose.",
   "author": {
     "name": "Taylor Dolezal",

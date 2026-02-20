@@ -30,7 +30,7 @@ compatibility: |
   approval, opening strategy, and editorial triage.
   Not compatible with Claude.ai or API without code execution.
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Tailord
