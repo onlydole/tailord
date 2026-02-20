@@ -29,10 +29,15 @@ Requires Claude Code **1.0.33+**. Check with `claude --version`.
 
 ### Option A: Plugin system (recommended)
 
-Inside Claude Code, run two commands. The first registers the catalog, the second installs the skill:
+Inside Claude Code, run two commands. The first registers the catalog, the second installs the skill.
 
+Step 1 — Register the catalog:
 ```
 /plugin marketplace add onlydole/tailord
+```
+
+Step 2 — Install the skill:
+```
 /plugin install tailord@onlydole-tailord
 ```
 
