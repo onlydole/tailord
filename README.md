@@ -20,8 +20,7 @@ Quick pieces (Short take + Quick hit) skip the editorial team and research steps
 ## Requirements
 
 - [Claude Code](https://claude.com/claude-code) CLI
-- `vale` CLI (auto-installed on first run)
-- Optional: [Exa MCP server](https://docs.exa.ai/) for richer web research
+- `vale` CLI (auto-installed on session start via hook, or on first lint run)
 
 ## Installation
 
@@ -59,20 +58,24 @@ Then register it in your Claude Code settings by adding the plugin path. Open `~
 
 ### Setup
 
-After installation, run the setup script to install prerequisites and create your personal files from templates:
+After installation, run the interactive setup skill to create your voice profile:
+
+```
+/tailord-setup
+```
+
+This walks you through a conversational interview to define your writing voice, audience, and style preferences. It generates your personal `voice.md`, `reference-personal.md`, and vocabulary files, and runs Vale setup automatically.
+
+Alternatively, you can run the setup script manually:
 
 ```bash
 # From the plugin directory
 skills/tailord/scripts/setup.sh
 ```
 
-This will:
-- Install `vale` CLI if missing
-- Sync the Google style package
-- Create system symlinks for bare `vale` invocations
-- Copy `voice.template.md` to `voice.md` for customization
-- Copy `reference-personal.template.md` to `reference-personal.md`
-- Create `accept.local.txt` for personal vocabulary
+The manual script installs prerequisites and copies templates, but you'll need to edit `voice.md` by hand.
+
+**Exa MCP** for web research is included automatically via `.mcp.json` — no API key required.
 
 ## Customization
 

@@ -91,7 +91,13 @@ If the piece requires looking up tweets, articles, source material, or fact-chec
 
 ### Step 2: Load the voice and mechanics prompts
 
-Read [references/voice.md](references/voice.md) for the author's identity, audience, and voice characteristics. Read [references/mechanics.md](references/mechanics.md) for the structural patterns, sentence-level rules, formatting, and anti-AI writing mechanics. Together, these are the rules for every sentence you write.
+First, check that the voice profile is ready. Read [references/voice.md](references/voice.md). If the file does not exist, or if it contains `[PLACEHOLDER]`, `[YOUR NAME]`, `[YOUR `, or other unfilled template markers, **stop and tell the user**:
+
+> Your voice profile isn't configured yet. Run `/tailord-setup` to create one through a quick interview, then come back to `/tailord`.
+
+Do not proceed with drafting until voice.md contains a real, filled-in voice profile.
+
+Once confirmed, read [references/voice.md](references/voice.md) for the author's identity, audience, and voice characteristics. Read [references/mechanics.md](references/mechanics.md) for the structural patterns, sentence-level rules, formatting, and anti-AI writing mechanics. Together, these are the rules for every sentence you write.
 
 For deeper context on writer techniques, rhetorical patterns, AI writing tells, and voice examples, read [references/reference.md](references/reference.md). This is optional for quick pieces but recommended for longer essays where you need richer stylistic choices. If the file [references/reference-personal.md](references/reference-personal.md) exists, read it too for the author's personal voice patterns, editorial learnings, and narrative flow examples.
 
@@ -207,7 +213,7 @@ After applying editorial revisions, run `scripts/lint.sh` again on the revised d
 | Tool | Purpose | When used |
 |------|---------|-----------|
 | `vale` CLI | Automated style linting with custom AuthenticVoice rules covering banned vocabulary, filler phrases, AI writing tells, fabricated experience, emotion directives, transition formulas, restatement signals, section reset openers, and more. Auto-installed by `prereqs.sh` if missing. | Step 3.5 (every draft) |
-| Exa MCP (`mcp__exa__web_search_exa`, `mcp__exa__web_search_advanced_exa`) | Web research, tweet lookup, article retrieval. Preferred over built-in `WebSearch` for cleaner content. Use `web_search_advanced_exa` with `category` filter for typed searches. | Step 1.5 (research) |
+| Exa MCP (`mcp__exa__web_search_exa`, `mcp__exa__web_search_advanced_exa`) | Web research, tweet lookup, article retrieval. Auto-configured by the plugin via `.mcp.json` — no API key needed. Preferred over built-in `WebSearch` for cleaner content. Use `web_search_advanced_exa` with `category` filter for typed searches. | Step 1.5 (research) |
 
 Vale config: `vale/.vale.ini` (co-located with the skill, used with `--no-global` to prevent config cascade merging)
 Vale styles: `Vale`, `Google`, `AuthenticVoice` (custom)

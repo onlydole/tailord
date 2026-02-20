@@ -10,5 +10,6 @@
   "repository": "https://github.com/onlydole/tailord",
   "license": "Apache-2.0",
   "keywords": ["writing", "voice", "editorial", "vale", "blog", "newsletter"],
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json"
 }
