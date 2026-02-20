@@ -25,34 +25,40 @@ Quick pieces (Short take + Quick hit) skip the editorial team and research steps
 
 ## Installation
 
-### Option A: Plugin marketplace (recommended)
+Requires Claude Code **1.0.33+**. Check with `claude --version`.
+
+### Option A: Plugin system (recommended)
+
+Inside Claude Code, run two commands. The first registers the catalog, the second installs the skill:
 
 ```
 /plugin marketplace add onlydole/tailord
 /plugin install tailord@onlydole-tailord
 ```
 
-### Option B: Vercel skills CLI
+You can also browse available plugins interactively with `/plugin` and look under the **Discover** tab.
+
+### Option B: Manual clone
 
 ```bash
-npx skills add onlydole/tailord
+git clone https://github.com/onlydole/tailord.git ~/.claude/plugins/tailord
 ```
 
-### Option C: Manual clone
+Then register it in your Claude Code settings by adding the plugin path. Open `~/.claude/settings.json` and add:
 
-```bash
-git clone https://github.com/onlydole/tailord.git ~/oss/tailord
+```json
+{
+  "plugins": ["~/.claude/plugins/tailord"]
+}
 ```
-
-Then add the plugin path to your Claude Code settings.
 
 ### Setup
 
-After installation, run setup to install prerequisites and create personal files from templates:
+After installation, run the setup script to install prerequisites and create your personal files from templates:
 
 ```bash
 # From the plugin directory
-scripts/setup.sh
+skills/tailord/scripts/setup.sh
 ```
 
 This will:
