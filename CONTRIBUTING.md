@@ -57,6 +57,20 @@ Terms specific to your writing (people's names, niche company names) go in `acce
 - Agent prompts should be specific enough to produce consistent results
 - The synthesis and triage steps should handle any number of findings
 
+## How iterative learning works
+
+The skill learns from editorial feedback through Step 6 (Learning Capture). After each editorial session, the skill:
+
+1. Reviews what was flagged and fixed during the session
+2. Presents proposed learnings to the author for approval
+3. Writes approved learnings to `references/reference-personal.md` (gitignored, personal)
+4. Creates new Vale rules in `vale/styles/AuthenticVoice/` when patterns are regex-matchable
+5. Updates `references/vale-rules.md` with per-rule fixing guidance
+
+**Auto-generated Vale rules** follow the same format as manually created rules. They're created in the `AuthenticVoice/` directory and tested against the current draft before being saved. If an auto-generated rule catches a pattern that should be universal (not personal), consider submitting it as a PR to benefit all tailord users.
+
+**reference-personal.md entries** accumulate over time. The learning capture checks for duplicates before appending. If a similar learning already exists, it updates the existing entry with a new example rather than creating a duplicate.
+
 ## Pull request checklist
 
 - [ ] New vale rules include examples in `vale-rules.md`

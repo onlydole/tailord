@@ -228,3 +228,88 @@ FOR SHORTER PIECES.
 If the piece is only a few paragraphs (a quick post, a short email, a social
 media thread), skip the full five-agent team. Instead, do a single self-review
 pass against the anti-slop checklist above before delivering the draft.
+
+LEARNING CAPTURE.
+After the author reviews the final draft and provides feedback, capture what
+this session taught. This step is what makes the skill improve over time.
+Skip it only if the session produced no new learnings.
+
+Step A — Identify learnings.
+Review the full editorial session and extract learnings in three categories:
+
+1. Patterns the author called out that agents missed or dismissed.
+   These are the highest-value learnings. If the author flagged something
+   as AI-speak or a bad pattern that wasn't in any agent's findings (or
+   was listed as a false positive during triage), that's a gap in the
+   skill's detection.
+
+2. Patterns agents flagged that turned out to be real problems.
+   If an agent's finding survived triage and the fix meaningfully improved
+   the draft, record the pattern so future sessions prioritize it.
+
+3. Vale gaps — patterns that are regex-matchable but have no Vale rule.
+   Agent 3 (Anti-Slop Auditor) is instructed to flag these explicitly.
+   Also check: did any pattern come up 3+ times in the session that
+   could be caught by a token list or regex?
+
+Step B — Present learnings to the author for approval.
+Use AskUserQuestion with a single multi-select question:
+
+"Which of these learnings should I save for future sessions?" (multi-select)
+
+List each proposed learning as an option with:
+- label: Short name for the pattern (e.g., "Punchy parallel fragments")
+- description: One sentence explaining what it catches and how to fix it
+
+Include a "None — skip learning capture" option. If the author selects
+that, skip Steps C and D entirely.
+
+Step C — Write approved learnings to reference-personal.md.
+For each approved learning, append an entry under the appropriate section
+in references/reference-personal.md:
+
+- Pattern learnings go under "## LEARNINGS FROM EDITORIAL SESSIONS"
+- Voice pattern observations go under "## YOUR VOICE PATTERNS (WITH EXAMPLES)"
+- Content-type-specific learnings go under "## EDITORIAL LEARNINGS (CONTENT-TYPE SPECIFIC)"
+
+Each entry should include:
+- A ### heading naming the pattern
+- The bad example from this session (the original text before fixing)
+- What was wrong (one sentence)
+- The fix that worked (the revised text)
+- The date and piece title for context
+
+Before appending, read the existing file and check for duplicate entries.
+If a similar learning already exists, update it with the new example rather
+than creating a duplicate. A learning is a duplicate if its heading matches
+an existing heading or if its description covers the same pattern.
+
+Step D — Create Vale rules for regex-matchable patterns.
+For each Vale gap identified in Step A (category 3), determine which Vale
+rule type fits:
+
+- Fixed phrases → use `extends: existence` with a `tokens:` list
+- One form should be another → use `extends: substitution` with a `swap:` map
+- Regex pattern → use `extends: existence` with a `raw:` list
+- Count-based (too many of X) → use `extends: occurrence` with `token:` and `max:`
+
+Create the rule file at `vale/styles/AuthenticVoice/<RuleName>.yml` following
+the exact format of existing rules. Use PascalCase for the filename. Set:
+- `message`: Include '%s' placeholder. Explain what it catches and suggest a fix.
+- `ignorecase: true` (unless case matters)
+- `level`: `warning` for behavioral patterns, `error` for hard bans, `suggestion` for judgment calls
+
+After creating the rule file, add a corresponding entry to
+references/vale-rules.md under "## AuthenticVoice rules" following the
+existing format: `- **AuthenticVoice.RuleName**: [what it catches and how to fix it]`
+
+Test the new rule by running `scripts/lint.sh` against the current draft.
+If the rule produces false positives on the already-fixed draft, adjust the
+token list. If it produces errors on vale startup, fix the YAML syntax.
+Report the test results to the author.
+
+Step E — Confirm completion.
+Tell the author what was saved:
+- How many learnings were written to reference-personal.md
+- How many new Vale rules were created (with names)
+- Remind them that these will be active in future sessions

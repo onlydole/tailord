@@ -42,19 +42,29 @@ What ingredients do you rotate through in your openings?
 
 ## LEARNINGS FROM EDITORIAL SESSIONS
 
-Document specific mistakes caught during editorial review so they don't
-recur. Include the original text, what was wrong, and how it was fixed.
+This section is populated automatically by the learning capture step
+(Step 6 in SKILL.md / LEARNING CAPTURE in editorial.md) after each
+editorial session. You can also add entries manually.
+
+Each entry should include:
+- A ### heading naming the pattern
+- A bad example (the original text)
+- What was wrong (one sentence)
+- The fix that worked (the revised text)
+- The date and piece title for context
 
 ### Never fabricate atmospheric details
-[Document a specific example where you or the AI made up a detail that
-sounded vivid but wasn't sourced.]
+[Will be populated from editorial sessions where the AI invented
+vivid details that weren't sourced.]
 
 ### Credentials illuminate when they show work
-[Document a specific example of credential-stuffing vs. showing what
-someone built.]
+[Will be populated from editorial sessions where credential-stuffing
+was caught vs. showing what someone built.]
 
 ### Real errors caught by editorial agents
-[List specific factual errors that were caught and corrected.]
+[Will be populated from editorial sessions where factual errors
+were caught and corrected. Track the agent's false-positive rate
+here — it's lower than you think.]
 
 ---
 

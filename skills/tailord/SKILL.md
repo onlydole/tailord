@@ -185,6 +185,22 @@ Present the revised draft to the author with a brief note on what the editorial 
 
 After applying editorial revisions, run `scripts/lint.sh` again on the revised draft. Editorial fixes sometimes introduce new vale violations (new colon splices, uncontracted negatives, filler phrases). Fix any new errors and warnings before presenting the final draft to the author.
 
+### Step 6: Learning capture
+
+After the author has reviewed the final draft and provided any last feedback, run the learning capture step. This is how the skill gets better over time. Read [references/editorial.md](references/editorial.md)'s LEARNING CAPTURE section and follow its instructions.
+
+The learning capture does three things:
+1. Records editorial learnings into `reference-personal.md` so future sessions watch for the same patterns
+2. Creates new Vale rules when a flagged pattern is regex-matchable, so Vale catches it automatically next time
+3. Updates `vale-rules.md` with per-rule fixing guidance for any new rules
+
+**When to run this step:**
+- Always run it after a substantial piece goes through the full editorial team
+- Skip it for quick pieces that didn't use the editorial team
+- Skip it if the session produced no new learnings (all findings were already known patterns)
+
+**Important:** Do NOT auto-write learnings without the author confirming them. Use AskUserQuestion to present proposed learnings and let the author approve, edit, or dismiss each one before writing to files.
+
 ## Key principles
 
 - Sense-making over tutorials. Help readers orient, not execute.
@@ -202,7 +218,7 @@ After applying editorial revisions, run `scripts/lint.sh` again on the revised d
 | [references/mechanics.md](references/mechanics.md) | Structural patterns, sentence rules, formatting, anti-AI mechanics | Always (Step 2) |
 | [references/editorial.md](references/editorial.md) | Multi-agent editorial team instructions | Substantial pieces (Step 4) |
 | [references/reference.md](references/reference.md) | Writer profiles, techniques, AI tells | Longer essays or when you need richer stylistic choices |
-| [references/reference-personal.md](references/reference-personal.md) | Personal voice patterns, editorial learnings, narrative flow examples | Optional enrichment (Step 2) |
+| [references/reference-personal.md](references/reference-personal.md) | Personal voice patterns, editorial learnings, narrative flow examples. Updated automatically by Step 6. | Always (Step 2), written to (Step 6) |
 | [references/vale-rules.md](references/vale-rules.md) | Per-rule guidance for fixing vale findings | When fixing specific vale violations (Step 3.5) |
 | [scripts/prereqs.sh](scripts/prereqs.sh) | Shared prerequisite detection, installation, and version tracking | Auto-sourced by lint.sh and setup.sh |
 | [scripts/lint.sh](scripts/lint.sh) | Vale linting wrapper with `--no-global` isolation | Every draft (Step 3.5) |
