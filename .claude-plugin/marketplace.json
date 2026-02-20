@@ -8,7 +8,7 @@
       "name": "tailord",
       "source": "./",
       "description": "Tailor your drafts to your voice. Custom Vale linting rules and a multi-agent editorial team that strips AI writing patterns from prose.",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "license": "Apache-2.0",
       "category": "writing",
       "tags": ["writing", "voice", "editorial", "vale", "blog"]

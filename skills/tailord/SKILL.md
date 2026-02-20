@@ -30,7 +30,7 @@ compatibility: |
   approval, opening strategy, and editorial triage.
   Not compatible with Claude.ai or API without code execution.
 metadata:
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 # Tailord
@@ -154,9 +154,9 @@ This automated pass handles the mechanical checks so the editorial team can focu
 
 ### Step 4: Editorial review (auto-spin for substantial pieces)
 
-For anything longer than a few paragraphs, read [references/editorial.md](references/editorial.md) and follow its instructions to spin up the multi-agent editorial team in parallel using the Task tool. The agents run concurrently and report back with findings.
+For anything longer than a few paragraphs, read [references/editorial.md](references/editorial.md) and follow its instructions to spin up the multi-agent editorial team in parallel using the Task tool. The four agents run concurrently and report back with findings.
 
-The team includes five core editors (Voice Auditor, Fact Checker, Anti-Slop Auditor, Structural Editor, Reader Proxy), three skeptic reviewers (Manufactured Relatability Detector, Filler and Hype Stripper, Cynical Reader), a Section Value Auditor, a Copy Editor for final mechanical compliance, and a Narrative Arc Auditor for cross-sectional coherence.
+The team includes four consolidated reviewers: a Voice & Authenticity Reviewer (voice scoring, anti-slop checklist, cynical sentence evaluation), a Fact & Fabrication Checker (claim verification, manufactured relatability detection), a Structure & Arc Editor (section structure, value assessment, narrative coherence), and an Engagement & Clarity Reviewer (developer engagement, filler/hype patterns, link/citation checks).
 
 For shorter pieces, do a single self-review pass against the anti-slop checklist in references/editorial.md before delivering.
 
