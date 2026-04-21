@@ -20,8 +20,8 @@ allowed-tools:
   - WebSearch
   - WebFetch
   - AskUserQuestion
-  - "mcp__exa__web_search_exa"
-  - "mcp__exa__web_search_advanced_exa"
+  - "mcp__claude_ai_Exa__web_search_exa"
+  - "mcp__claude_ai_Exa__web_search_advanced_exa"
 license: Apache-2.0
 compatibility: |
   Requires Claude Code with vale CLI (auto-installed on first run via prereqs.sh).
@@ -87,7 +87,7 @@ After the format questions, ask any follow-up clarifications conversationally:
 
 ### Step 1.5: Research (when needed)
 
-If the piece requires looking up tweets, articles, source material, or fact-checking, prefer the Exa MCP tools (`mcp__exa__web_search_exa` and `mcp__exa__web_search_advanced_exa`) over the built-in `WebSearch` tool. Exa returns cleaner, more complete content that's easier to work with for writing. Use `web_search_advanced_exa` with the `category` filter (e.g., `"tweet"` for X/Twitter posts, `"news"` for articles) when you know the content type. Fall back to `WebSearch` or `WebFetch` only if Exa doesn't return results.
+If the piece requires looking up tweets, articles, source material, or fact-checking, prefer the Exa MCP tools (`mcp__claude_ai_Exa__web_search_exa` and `mcp__claude_ai_Exa__web_search_advanced_exa`) over the built-in `WebSearch` tool. Exa returns cleaner, more complete content that's easier to work with for writing. Use `web_search_advanced_exa` with the `category` filter (e.g., `"tweet"` for X/Twitter posts, `"news"` for articles) when you know the content type. Fall back to `WebSearch` or `WebFetch` only if Exa doesn't return results.
 
 ### Step 2: Load the voice and mechanics prompts
 
@@ -229,7 +229,7 @@ The learning capture does three things:
 | Tool | Purpose | When used |
 |------|---------|-----------|
 | `vale` CLI | Automated style linting with custom AuthenticVoice rules covering banned vocabulary, filler phrases, AI writing tells, fabricated experience, emotion directives, transition formulas, restatement signals, section reset openers, and more. Auto-installed by `prereqs.sh` if missing. | Step 3.5 (every draft) |
-| Exa MCP (`mcp__exa__web_search_exa`, `mcp__exa__web_search_advanced_exa`) | Web research, tweet lookup, article retrieval. Auto-configured by the plugin via `.mcp.json` — no API key needed. Preferred over built-in `WebSearch` for cleaner content. Use `web_search_advanced_exa` with `category` filter for typed searches. | Step 1.5 (research) |
+| Exa MCP (`mcp__claude_ai_Exa__web_search_exa`, `mcp__claude_ai_Exa__web_search_advanced_exa`) | Web research, tweet lookup, article retrieval. Provided by the claude.ai Exa connector (configure it once at the claude.ai account level). Preferred over built-in `WebSearch` for cleaner content. Use `web_search_advanced_exa` with `category` filter for typed searches. | Step 1.5 (research) |
 
 Vale config: `vale/.vale.ini` (co-located with the skill, used with `--no-global` to prevent config cascade merging)
 Vale styles: `Vale`, `Google`, `AuthenticVoice` (custom)
