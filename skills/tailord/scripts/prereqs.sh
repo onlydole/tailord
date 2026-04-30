@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
 # Shared prerequisite checks for the tailord skill.
-# Sourced by lint.sh and setup.sh — not executed directly.
+# Sourced by lint.sh, setup.sh, and prereqs-hook.sh — not executed directly.
+#
+# Two modes:
+#   ensure_prerequisites          — detect-only. Returns nonzero if vale is missing.
+#                                    Prints platform-appropriate install instructions
+#                                    on stderr but does NOT install.
+#   ensure_prerequisites --install — installs vale if missing (used by setup.sh,
+#                                    where the user has explicitly opted in), then
+#                                    syncs Google styles and stamps the version file.
 #
 # Functions:
-#   ensure_prerequisites  — orchestrator (call this one)
-#   check_vale_cli / install_vale_cli
+#   ensure_prerequisites
+#   check_vale_cli / install_vale_cli / print_install_hint
 #   check_google_styles / sync_google_styles
 #   check_version / stamp_version
 
@@ -20,6 +28,21 @@ _prereqs_config="$_prereqs_vale_dir/.vale.ini"
 
 check_vale_cli() {
   command -v vale &>/dev/null
+}
+
+print_install_hint() {
+  cat >&2 <<'HINT'
+vale CLI not found. The tailord skill needs vale to lint drafts.
+
+Install vale:
+  macOS:  brew install vale
+  Linux:  snap install vale
+          (or download the binary from https://vale.sh/docs/install)
+
+Or run the bundled setup script (installs vale, syncs Google styles,
+and creates system symlinks):
+  scripts/setup.sh
+HINT
 }
 
 install_vale_cli() {
@@ -76,8 +99,18 @@ stamp_version() {
 # ---------- Orchestrator ----------
 
 ensure_prerequisites() {
+  local install_mode=false
+  if [[ "${1:-}" == "--install" ]]; then
+    install_mode=true
+  fi
+
   if ! check_vale_cli; then
-    install_vale_cli || return 1
+    if [[ "$install_mode" == "true" ]]; then
+      install_vale_cli || return 1
+    else
+      print_install_hint
+      return 1
+    fi
   fi
 
   local needs_sync=false

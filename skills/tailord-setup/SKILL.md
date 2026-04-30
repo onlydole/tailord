@@ -14,16 +14,10 @@ allowed-tools:
   - WebSearch
   - WebFetch
   - AskUserQuestion
-  - "Bash(*/tailord/scripts/*)"
+  - "Bash(${CLAUDE_PLUGIN_ROOT}/skills/tailord/scripts/setup.sh *)"
+  - "Bash(${CLAUDE_PLUGIN_ROOT}/skills/tailord/scripts/lint.sh *)"
   - "Bash(vale *)"
-  - "mcp__exa__web_search_exa"
-license: Apache-2.0
-compatibility: |
-  Requires Claude Code with the tailord plugin installed.
-  Uses AskUserQuestion for structured interview steps.
-  Uses Exa MCP or WebFetch to analyze existing published writing.
-metadata:
-  version: 1.0.0
+  - "mcp__claude_ai_Exa__web_search_exa"
 ---
 
 # Tailord Setup
@@ -152,7 +146,7 @@ Use AskUserQuestion:
 
 If the author chooses Yes:
 - Ask them to paste 1-3 URLs of their best published writing
-- Use Exa (`mcp__exa__web_search_exa`) or WebFetch to retrieve the content
+- Use Exa (`mcp__claude_ai_Exa__web_search_exa`) when the claude.ai Exa connector is enabled; otherwise use WebFetch. Don't prompt the user to install Exa — fall back silently.
 - Analyze the writing for:
   - Typical opening patterns (what do they lead with?)
   - Sentence length and rhythm (long/short, varied?)

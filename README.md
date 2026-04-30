@@ -20,7 +20,7 @@ Quick pieces (Short take + Quick hit) skip the editorial team and research steps
 ## Requirements
 
 - [Claude Code](https://claude.com/claude-code) CLI
-- `vale` CLI (auto-installed on session start via hook, or on first lint run)
+- `vale` CLI — auto-detected on session start. If missing, the skill prompts you to install before its first lint pass. Pre-install with `brew install vale` (macOS) or `snap install vale` (Linux), or let `scripts/setup.sh` install it for you.
 
 ## Installation
 
@@ -75,7 +75,9 @@ skills/tailord/scripts/setup.sh
 
 The manual script installs prerequisites and copies templates, but you'll need to edit `voice.md` by hand.
 
-**Exa MCP** for web research is included automatically via `.mcp.json` — no API key required.
+### Optional integrations
+
+- **Exa MCP** (research): If you've enabled the [claude.ai Exa connector](https://claude.ai) at the account level, the skill will use it for cleaner web search and tweet/article retrieval during research. If the connector isn't enabled, the skill falls back to `WebSearch`/`WebFetch` automatically — no install or API key needed.
 
 ## Customization
 
@@ -132,21 +134,14 @@ The script outputs JSON. Use `--skip-prereqs` for faster repeated runs.
 
 ## The editorial team
 
-For substantial pieces, the skill spins up a parallel editorial team:
+For substantial pieces, the skill spins up a parallel editorial team of four consolidated reviewers:
 
 | Agent | Focus |
 |-------|-------|
-| Voice Auditor | Sentence-level voice authenticity |
-| Fact Checker | Verifiable claims and fabrication detection |
-| Anti-Slop Auditor | Contextual quality checklist |
-| Structural Editor | Arc, pacing, thesis, transitions |
-| Reader Proxy | Developer/leader perspective |
-| Manufactured Relatability Detector | Fabricated anecdotes |
-| Filler and Hype Stripper | Padding and hype reinforcement |
-| Section Value Auditor | Per-section information density |
-| Cynical Reader | Maximum suspicion AI detection |
-| Copy Editor | Mechanical compliance |
-| Narrative Arc Auditor | Cross-sectional coherence |
+| Voice & Authenticity Reviewer | Sentence-level voice scoring, anti-slop checklist, cynical-reader evaluation of weakest sentences |
+| Fact & Fabrication Checker | Claim verification and detection of manufactured relatability or invented anecdotes |
+| Structure & Arc Editor | Section structure, per-section value, narrative coherence, arc, pacing |
+| Engagement & Clarity Reviewer | Developer engagement, filler and hype patterns, link/citation checks, mechanical compliance |
 
 ## License
 

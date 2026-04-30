@@ -10,8 +10,9 @@
 #
 # Exit codes:
 #   0 — vale ran successfully (JSON output may contain findings)
-#   1 — usage error or prerequisite failure
-#   >1 — vale configuration or runtime error
+#   1 — usage error
+#   2 — vale CLI missing (install hint printed on stderr)
+#   >2 — vale configuration or runtime error
 
 set -euo pipefail
 
@@ -33,11 +34,15 @@ if [ -z "${1:-}" ]; then
   exit 1
 fi
 
-# Ensure prerequisites unless skipped (useful for repeated runs)
+# Ensure prerequisites unless skipped (useful for repeated runs).
+# Detect-only: if vale is missing, prereqs prints an install hint and we exit 2
+# so callers (including the skill) can prompt the user.
 if [[ "$skip_prereqs" == "false" ]]; then
   # shellcheck source=prereqs.sh
   source "$script_dir/prereqs.sh"
-  ensure_prerequisites
+  if ! ensure_prerequisites; then
+    exit 2
+  fi
 fi
 
 # Merge accept.txt + accept.local.txt into accept.merged.txt

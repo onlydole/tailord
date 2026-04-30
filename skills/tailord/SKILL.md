@@ -10,7 +10,8 @@ description: |
   docs, README files, git commit messages, or internal comms.
 allowed-tools:
   - "Bash(vale *)"
-  - "Bash(*/tailord/scripts/*)"
+  - "Bash(${CLAUDE_PLUGIN_ROOT}/skills/tailord/scripts/lint.sh *)"
+  - "Bash(${CLAUDE_PLUGIN_ROOT}/skills/tailord/scripts/setup.sh *)"
   - Task
   - Read
   - Write
@@ -22,15 +23,6 @@ allowed-tools:
   - AskUserQuestion
   - "mcp__claude_ai_Exa__web_search_exa"
   - "mcp__claude_ai_Exa__web_search_advanced_exa"
-license: Apache-2.0
-compatibility: |
-  Requires Claude Code with vale CLI (auto-installed on first run via prereqs.sh).
-  Uses Task tool for multi-agent editorial workflow.
-  Uses AskUserQuestion for structured decision points at piece shape, blueprint
-  approval, opening strategy, and editorial triage.
-  Not compatible with Claude.ai or API without code execution.
-metadata:
-  version: 1.1.0
 ---
 
 # Tailord
@@ -39,13 +31,13 @@ Co-write with the author using their authentic voice and a multi-agent editorial
 
 ## Getting started
 
-Prerequisites auto-install on first run. The `lint.sh` and `setup.sh` scripts both source `scripts/prereqs.sh`, which detects and installs the vale CLI, syncs the Google style package, and stamps a version file for future update checks.
-
-To run full setup (including system symlinks for bare `vale` invocations):
+The session-start hook detects whether the `vale` CLI is installed and surfaces an install hint if it's missing — it does not install anything on its own. Run `scripts/setup.sh` to install vale (via `brew`, `snap`, or binary download), sync the Google style package, and set up system symlinks in one step:
 
 ```
 scripts/setup.sh
 ```
+
+You can also run `scripts/lint.sh` directly; if vale is missing it exits with an install hint instead of silently installing.
 
 Then copy `references/voice.template.md` to `references/voice.md` and customize it with your identity, audience, and platform.
 
@@ -87,7 +79,9 @@ After the format questions, ask any follow-up clarifications conversationally:
 
 ### Step 1.5: Research (when needed)
 
-If the piece requires looking up tweets, articles, source material, or fact-checking, prefer the Exa MCP tools (`mcp__claude_ai_Exa__web_search_exa` and `mcp__claude_ai_Exa__web_search_advanced_exa`) over the built-in `WebSearch` tool. Exa returns cleaner, more complete content that's easier to work with for writing. Use `web_search_advanced_exa` with the `category` filter (e.g., `"tweet"` for X/Twitter posts, `"news"` for articles) when you know the content type. Fall back to `WebSearch` or `WebFetch` only if Exa doesn't return results.
+If the piece requires looking up tweets, articles, source material, or fact-checking, prefer the Exa MCP tools (`mcp__claude_ai_Exa__web_search_exa` and `mcp__claude_ai_Exa__web_search_advanced_exa`) when they're available — Exa returns cleaner, more complete content than `WebSearch`. Use `web_search_advanced_exa` with the `category` filter (e.g., `"tweet"` for X/Twitter posts, `"news"` for articles) when you know the content type.
+
+Exa is optional. If the user hasn't enabled the claude.ai Exa connector, those tools won't be in your toolkit — fall back to `WebSearch` and `WebFetch` without prompting the user to install anything. Detect this by trying Exa first; if the tool isn't available, switch silently.
 
 ### Step 2: Load the voice and mechanics prompts
 
@@ -134,6 +128,18 @@ After the draft is complete, do a section-boundary review pass. Read the last tw
 ### Step 3.5: Vale lint pass
 
 After drafting, run the draft through vale to catch mechanical voice violations before the editorial team reviews. This catches banned vocabulary, filler phrases, throat-clearing, AI writing tells, and other pattern-matchable issues automatically.
+
+**Vale prerequisite check.** Before running lint for the first time in a session, check whether `vale` is on PATH (`command -v vale`). If it's missing, use AskUserQuestion to ask:
+
+- "Vale CLI isn't installed. Install it now so the lint pass can run?" (single-select)
+  - "Install with `brew install vale` (macOS)" — run it, then continue
+  - "Install with `snap install vale` (Linux)" — run it, then continue
+  - "I'll install it manually later — skip the lint pass for now"
+  - "Run `scripts/setup.sh` (full setup including symlinks and Google styles)"
+
+If the user picks "skip", note that lint is skipped for this session and proceed directly to Step 4. Editorial agents will catch many issues that vale would have caught, but pattern-matchable mechanical violations may slip through. Surface this trade-off when delivering the final draft.
+
+If the user installs, re-check `command -v vale`, then run `scripts/setup.sh` once to sync Google styles before the first lint.
 
 1. Write the draft to the user's current working directory (NOT the skill directory) as `YYYY-MM-DD-title-of-the-doc.md` (lowercase, hyphens between words, date from today). For example, a post titled "My post title here" written today becomes `YYYY-MM-DD-my-post-title-here.md` (with today's actual date). Never write drafts, outputs, or any working files into the skill directory. That directory is for skill configuration only.
 2. Run the lint script:
@@ -228,8 +234,8 @@ The learning capture does three things:
 
 | Tool | Purpose | When used |
 |------|---------|-----------|
-| `vale` CLI | Automated style linting with custom AuthenticVoice rules covering banned vocabulary, filler phrases, AI writing tells, fabricated experience, emotion directives, transition formulas, restatement signals, section reset openers, and more. Auto-installed by `prereqs.sh` if missing. | Step 3.5 (every draft) |
-| Exa MCP (`mcp__claude_ai_Exa__web_search_exa`, `mcp__claude_ai_Exa__web_search_advanced_exa`) | Web research, tweet lookup, article retrieval. Provided by the claude.ai Exa connector (configure it once at the claude.ai account level). Preferred over built-in `WebSearch` for cleaner content. Use `web_search_advanced_exa` with `category` filter for typed searches. | Step 1.5 (research) |
+| `vale` CLI | Automated style linting with custom AuthenticVoice rules covering banned vocabulary, filler phrases, AI writing tells, fabricated experience, emotion directives, transition formulas, restatement signals, section reset openers, and more. Detected at session start; the skill prompts the user to install if missing rather than installing silently. Run `scripts/setup.sh` to install and configure in one step. | Step 3.5 (every draft) |
+| Exa MCP (`mcp__claude_ai_Exa__web_search_exa`, `mcp__claude_ai_Exa__web_search_advanced_exa`) | Optional. Web research, tweet lookup, article retrieval. Provided by the claude.ai Exa connector (configure once at the claude.ai account level). Preferred over built-in `WebSearch` for cleaner content when available. Falls back to `WebSearch`/`WebFetch` if the connector isn't enabled. | Step 1.5 (research) |
 
 Vale config: `vale/.vale.ini` (co-located with the skill, used with `--no-global` to prevent config cascade merging)
 Vale styles: `Vale`, `Google`, `AuthenticVoice` (custom)

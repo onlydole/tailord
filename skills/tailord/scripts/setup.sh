@@ -27,10 +27,12 @@ echo "Tailord skill setup"
 echo "==================="
 echo
 
-# Source shared prerequisites and run all checks
+# Source shared prerequisites and run all checks.
+# setup.sh is the explicit-opt-in install path — pass --install so vale gets
+# installed if missing.
 # shellcheck source=prereqs.sh
 source "$script_dir/prereqs.sh"
-ensure_prerequisites
+ensure_prerequisites --install
 
 echo "vale $(vale --version) found."
 echo "Google style synced."
